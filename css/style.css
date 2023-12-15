@@ -1,5 +1,94 @@
 *{
-    margin: 0;
+    margin: o;
     padding: 0;
     box-sizing: border-box;
+}
+
+.bgc{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgb(0, 151, 136) 125px, rgb(218, 219, 211) 125px);
+}
+
+.main-container{
+    height: 700px;
+    width: 1000px;
+    background-color: white;
+}
+
+.sidebar{
+    height: 100%;
+}
+
+.profile-header{
+    background-color: rgb(234, 234, 234) ;
+}
+
+.profile-header img{
+    width: 100%;
+}
+
+.contact {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #e4e4e4;
+    cursor: pointer;
+}
+
+.contact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-header h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.contact-header span {
+    font-size: 14px;
+    color: #888;
+}
+
+.contact-info {
+    flex: 1;
+    overflow: hidden;
+}
+
+.last-message {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.enable-notifications-banner{
+    background-color: rgb(142, 218, 252);
+}
+
+.chat-list {
+    height: calc(100% - 345px); /* Adjust the height as needed */
+}
+
+/* common */
+
+.font-size-12{
+    font-size: 12px;
+}
+
+.font-size-25{
+    font-size: 25px;
 }
