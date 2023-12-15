@@ -17,7 +17,7 @@
     <div id="app">
         <div class="bgc">
             <div class="row main-container overflow-y-hidden">
-                <div class="col-4 no-padding">
+                <div class="col-4 height-100 no-padding">
                     <div class="sidebar">
                         <div class="profile-header p-2">
                             <div class="row">
@@ -76,8 +76,48 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-8 no-padding">
-                    <div class="chat"></div>
+                <div class="col-8  height-100 no-padding bg-theme d-flex flex-column justify-content-between">
+                    <div class="header-chat">
+                        <div class="row width-100">
+                            <div class="col-2">
+                                <img src="./img/avatar_1.jpg" alt="utente" class="rounded-circle">
+                            </div>
+                            <div class="col-7 fw-semibold d-flex align-items-start flex-column justify-content-center">
+                                <p class="m-0 mt-2">
+                                    Michele
+                                </p>
+                                <p class="font-size-12 grey">
+                                    Ultimo accesso oggi alle 12:00
+                                </p>
+                            </div>
+                            <div class="col-1 d-flex align-items-center no-padding justify-content-center">
+                                <i class="fa-solid fa-circle-notch" style="color: #a5a9b1;"></i>
+                            </div>
+                            <div class="col-1 d-flex align-items-center no-padding justify-content-center">
+                                <i class="fa-solid fa-message px-1" style="color: #a5a9b1;"></i>
+                            </div>
+                            <div class="col-1 d-flex align-items-center no-padding justify-content-center">
+                                <i class="fa-solid fa-ellipsis-vertical" style="color: #a5a9b1;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-chat">
+                    </div>
+                    <div class="footer-chat py-2">
+                        <div class="row width-100">
+                            <div class="col-2 d-flex justify-content-center align-items-center no-padding">
+                                <i class="fa-regular fa-face-smile font-size-25" style="color: #a5a9b1;"></i>
+                            </div>
+                            <div class="col-8 no-padding">
+                                <div class="imput-group">
+                                    <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex justify-content-center align-items-center no-padding">
+                                <i class="fa-solid fa-microphone font-size-25" style="color: #a5a9b1;"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

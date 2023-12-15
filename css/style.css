@@ -22,7 +22,7 @@
     height: 100%;
 }
 
-.profile-header{
+.profile-header, .header-chat{
     background-color: rgb(234, 234, 234) ;
 }
 
@@ -37,6 +37,9 @@
     cursor: pointer;
 }
 
+.contact:hover{
+    background-color: rgba(0, 0, 0, 0.4)
+}
 .contact-header {
     display: flex;
     justify-content: space-between;
@@ -80,9 +83,26 @@
 }
 
 .chat-list {
-    height: calc(100% - 345px); /* Adjust the height as needed */
+    height: calc(100% - 189px); /* Adjust the height as needed */
 }
 
+.header-chat{
+    padding: 6px;
+    width: 100%;
+}
+
+.header-chat img{
+    width: 65px;
+}
+
+.footer-chat{
+    background-color: rgb(243, 238, 234);
+}
+.bg-theme{
+    background-image: url(../img/mine.jpg) ;
+    background-repeat: repeat;
+    background-size: contain;
+}
 /* common */
 
 .font-size-12{
@@ -91,4 +111,16 @@
 
 .font-size-25{
     font-size: 25px;
+}
+
+.grey{
+    color: grey;
+}
+
+.width-100{
+    width: 100%;
+}
+
+.height-100{
+    height: 100%;
 }
