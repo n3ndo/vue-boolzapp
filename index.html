@@ -57,20 +57,22 @@
                                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"
                                         style="color: #a5a9b1;"></i></span>
                                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
-                                    aria-label="Username" aria-describedby="basic-addon1">
+                                    aria-label="Username" aria-describedby="basic-addon1" v-model="searchText"
+                                    @keyup="searchContact()">
                             </div>
                         </div>
                         <div class="chat-list overflow-y-auto">
-                            <div @click="setContactVisible(contact)" v-for="(contact, index) in contacts" :key="index"
-                                class="contact">
-                                <img :src="contact.avatar" alt="Avatar" class="avatar">
-                                <div class="contact-info">
-                                    <div class="contact-header">
-                                        <h2>{{ contact.name }}</h2>
-                                        <span>{{ getLastMessageTime(contact.messages) }}</span>
-                                    </div>
-                                    <div class="last-message">
-                                        <p>{{ getLastMessageText(contact.messages) }}</p>
+                            <div @click="openContactChat(contact)" v-for="(contact, index) in contacts" :key="index">
+                                <div v-if="contact.visible" class="contact">
+                                    <img :src="contact.avatar" alt="Avatar" class="avatar">
+                                    <div class="contact-info">
+                                        <div class="contact-header">
+                                            <h2>{{ contact.name }}</h2>
+                                            <span>{{ getLastMessageTime(contact.messages) }}</span>
+                                        </div>
+                                        <div class="last-message">
+                                            <p>{{ getLastMessageText(contact.messages) }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +104,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="main-chat pt-3 height-100 overflow-y-auto" >
+                    <div class="main-chat pt-3 height-100 overflow-y-auto">
                         <div class="chat" v-for="(message, index) in getCurrentContact().messages" :key="index">
                             <div class="row width-100">
                                 <div class="col-6 no-padding d-flex justify-content-center align-items-start">
@@ -129,8 +131,8 @@
                             </div>
                             <div class="col-8 no-padding">
                                 <div class="imput-group">
-                                    <input type="text" class="form-control" placeholder="Username"
-                                        aria-label="Username"  v-model="currentMessage" @keyup.enter="sendMessage()">
+                                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                                        v-model="currentMessage" @keyup.enter="sendMessage()">
                                 </div>
                             </div>
                             <div class="col-2 d-flex justify-content-center align-items-center no-padding">

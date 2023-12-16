@@ -4,10 +4,12 @@ createApp({
   data() {
     return {
       currentMessage: '',
+      searchText: '',
       contacts: [
         {
           name: 'Michele',
           avatar: './img/avatar_1.jpg',
+          isOpenChat: true,
           visible: true,
           messages: [
             {
@@ -30,7 +32,8 @@ createApp({
         {
           name: 'Fabio',
           avatar: './img/avatar_2.jpg',
-          visible: false,
+          isOpenChat: false,
+          visible: true,
           messages: [
             {
               date: '20/03/2020 16:30:00',
@@ -52,7 +55,8 @@ createApp({
         {
           name: 'Samuele',
           avatar: './img/avatar_3.jpg',
-          visible: false,
+          isOpenChat: false,
+          visible: true,
           messages: [
             {
               date: '28/03/2020 10:10:40',
@@ -74,7 +78,8 @@ createApp({
         {
           name: 'Alessandro B.',
           avatar: './img/avatar_4.jpg',
-          visible: false,
+          isOpenChat: false,
+          visible: true,
           messages: [
             {
               date: '10/01/2020 15:30:55',
@@ -91,7 +96,8 @@ createApp({
         {
           name: 'Alessandro L.',
           avatar: './img/avatar_5.jpg',
-          visible: false,
+          isOpenChat: false,
+          visible: true,
           messages: [
             {
               date: '10/01/2020 15:30:55',
@@ -108,7 +114,8 @@ createApp({
         {
           name: 'Claudia',
           avatar: './img/avatar_6.jpg',
-          visible: false,
+          isOpenChat: false,
+          visible: true,
           messages: [
             {
               date: '10/01/2020 15:30:55',
@@ -130,7 +137,8 @@ createApp({
         {
           name: 'Federico',
           avatar: './img/avatar_7.jpg',
-          visible: false,
+          isOpenChat: false,
+          visible: true,
           messages: [
             {
               date: '10/01/2020 15:30:55',
@@ -147,7 +155,8 @@ createApp({
         {
           name: 'Davide',
           avatar: './img/avatar_8.jpg',
-          visible: false,
+          isOpenChat: false,
+          visible: true,
           messages: [
             {
               date: '10/01/2020 15:30:55',
@@ -193,12 +202,12 @@ createApp({
     },
 
     getCurrentContact() {
-      return this.contacts.find(contact => contact.visible);
+      return this.contacts.find(contact => contact.isOpenChat);
     },
 
-    setContactVisible(contact) {
-      this.contacts.forEach(contact => contact.visible = false);
-      contact.visible = true;
+    openContactChat(contact) {
+      this.contacts.forEach(contact => contact.isOpenChat = false);
+      contact.isOpenChat = true;
     },
 
     sendMessage() {
@@ -217,6 +226,11 @@ createApp({
           status: 'received'
         });
       }, 1000);
+    },
+
+    searchContact() {
+      this.contacts.forEach(contact => contact.visible = false);
+      this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchText.toLowerCase())).forEach(contact => contact.visible = true);
     }
   }
 }).mount('#app');
