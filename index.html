@@ -102,17 +102,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="main-chat pt-3 height-100" >
+                    <div class="main-chat pt-3 height-100 overflow-y-auto" >
                         <div class="chat" v-for="(message, index) in getCurrentContact().messages" :key="index">
-                            <div class="row">
-                                <div class="col-6 d-flex justify-content-center align-items-start">
+                            <div class="row width-100">
+                                <div class="col-6 no-padding d-flex justify-content-center align-items-start">
                                     <div v-if="message.status === 'received'">
                                         <div class="message received" :class="message.status">
                                             {{ message.message }}
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6 d-flex justify-content-center align-items-start">
+                                <div class="col-6 no-padding d-flex justify-content-center align-items-start">
                                     <div v-if="message.status === 'sent'">
                                         <div class="message sent" :class="message.status">
                                             {{ message.message }}

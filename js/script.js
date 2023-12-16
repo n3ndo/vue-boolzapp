@@ -202,13 +202,21 @@ createApp({
     },
 
     sendMessage() {
-      this.contacts.find(contact => contact.visible).messages.push({
+      const currentContact = this.getCurrentContact();
+      currentContact.messages.push({
         date: this.getTimestamp(),
         message: this.currentMessage,
         status: 'sent'
       });
       this.currentMessage = '';
-
+      //after a delay of 1 second add a message received
+      setTimeout(() => {
+        currentContact.messages.push({
+          date: this.getTimestamp(),
+          message: 'Ok',
+          status: 'received'
+        });
+      }, 1000);
     }
   }
 }).mount('#app');
