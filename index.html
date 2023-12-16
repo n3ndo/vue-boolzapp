@@ -54,14 +54,15 @@
                         </div>
                         <div class="search-bar">
                             <div class="input-group p-2">
-                                <span class="input-group-text" id="basic-addon1"><i
-                                    class="fa-solid fa-magnifying-glass" style="color: #a5a9b1;"></i></span>
-                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
-                                aria-label="Username" aria-describedby="basic-addon1">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"
+                                        style="color: #a5a9b1;"></i></span>
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
+                                    aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                         </div>
                         <div class="chat-list overflow-y-auto">
-                            <div v-for="(contact, index) in contacts" :key="index" class="contact">
+                            <div @click="setContactVisible(contact)" v-for="(contact, index) in contacts" :key="index"
+                                class="contact">
                                 <img :src="contact.avatar" alt="Avatar" class="avatar">
                                 <div class="contact-info">
                                     <div class="contact-header">
@@ -101,7 +102,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="main-chat">
+                    <div class="main-chat pt-3 height-100" >
+                        <div class="chat" v-for="(message, index) in getCurrentContact().messages" :key="index">
+                            <div class="row">
+                                <div class="col-6 d-flex justify-content-center align-items-start">
+                                    <div v-if="message.status === 'received'">
+                                        <div class="message received" :class="message.status">
+                                            {{ message.message }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 d-flex justify-content-center align-items-start">
+                                    <div v-if="message.status === 'sent'">
+                                        <div class="message sent" :class="message.status">
+                                            {{ message.message }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="footer-chat py-2">
                         <div class="row width-100">
@@ -110,7 +129,8 @@
                             </div>
                             <div class="col-8 no-padding">
                                 <div class="imput-group">
-                                    <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                                    <input type="text" class="form-control" placeholder="Username"
+                                        aria-label="Username">
                                 </div>
                             </div>
                             <div class="col-2 d-flex justify-content-center align-items-center no-padding">

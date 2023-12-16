@@ -83,7 +83,7 @@
 }
 
 .chat-list {
-    height: calc(100% - 189px); /* Adjust the height as needed */
+    height: calc(100% - 189px);
 }
 
 .header-chat{
@@ -103,6 +103,27 @@
     background-repeat: repeat;
     background-size: contain;
 }
+
+.message{
+    width: 235px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    margin-bottom: 10px;
+}
+
+.sent {
+    background-color: #dcf8c6;
+    font-size: 16px;
+    color: black;
+}
+
+.received {
+    background-color: #fff;
+    font-size: 16px;
+    color: black;
+}
+
 /* common */
 
 .font-size-12{
