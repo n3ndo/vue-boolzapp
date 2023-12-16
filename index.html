@@ -130,7 +130,7 @@
                             <div class="col-8 no-padding">
                                 <div class="imput-group">
                                     <input type="text" class="form-control" placeholder="Username"
-                                        aria-label="Username">
+                                        aria-label="Username"  v-model="currentMessage" @keyup.enter="sendMessage()">
                                 </div>
                             </div>
                             <div class="col-2 d-flex justify-content-center align-items-center no-padding">
