@@ -42,7 +42,7 @@
                         <div class="enable-notifications-banner">
                             <div class="row">
                                 <div class="col-2 no-padding d-flex align-items-center justify-content-end">
-                                    <i class="fa-solid fa-bell-slash font-size-25" style="color: #a5a9b1;"></i>
+                                    <i class="fa-solid fa-bell-slash font-size-25 bg-white radius-50 padding-8-6" style="color: rgb(142, 218, 252);"></i>
                                 </div>
                                 <div class="col-10 pt-2">
                                     <span class="fw-semibold">Ricevi notifiche di nuovi messaggi</span>
@@ -57,7 +57,7 @@
                                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"
                                         style="color: #a5a9b1;"></i></span>
                                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
-                                    aria-label="Username" aria-describedby="basic-addon1" v-model="searchText"
+                                  v-model="searchText"
                                     @keyup="searchContact()">
                             </div>
                         </div>
@@ -93,13 +93,9 @@
                                     Ultimo accesso oggi alle 12:00
                                 </p>
                             </div>
-                            <div class="col-1 d-flex align-items-center no-padding justify-content-center">
-                                <i class="fa-solid fa-circle-notch" style="color: #a5a9b1;"></i>
-                            </div>
-                            <div class="col-1 d-flex align-items-center no-padding justify-content-center">
-                                <i class="fa-solid fa-message px-1" style="color: #a5a9b1;"></i>
-                            </div>
-                            <div class="col-1 d-flex align-items-center no-padding justify-content-center">
+                            <div class="col-3 d-flex align-items-center justify-content-end">
+                                <i class="fa-solid fa-magnifying-glass" style="color: #a5a9b1;"></i>
+                                <i class="fa-solid fa-paperclip px-3" style="color: #a5a9b1;"></i>
                                 <i class="fa-solid fa-ellipsis-vertical" style="color: #a5a9b1;"></i>
                             </div>
                         </div>
@@ -131,8 +127,8 @@
                             </div>
                             <div class="col-8 no-padding">
                                 <div class="imput-group">
-                                    <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="Username"
-                                        v-model="currentMessage" @keyup.enter="sendMessage()">
+                                    <input type="text" class="form-control" placeholder="Scrivi un messaggio"
+                                        aria-label="Username" v-model="currentMessage" @keyup.enter="sendMessage()">
                                 </div>
                             </div>
                             <div class="col-2 d-flex justify-content-center align-items-center no-padding">
