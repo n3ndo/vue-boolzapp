@@ -83,14 +83,14 @@
                     <div class="header-chat">
                         <div class="row width-100">
                             <div class="col-2">
-                                <img src="./img/avatar_1.jpg" alt="utente" class="rounded-circle">
+                                <img :src="getCurrentContact().avatar" alt="utente" class="rounded-circle">
                             </div>
                             <div class="col-7 fw-semibold d-flex align-items-start flex-column justify-content-center">
                                 <p class="m-0 mt-2">
-                                    Michele
+                                    {{ getCurrentContact().name }}
                                 </p>
                                 <p class="font-size-12 grey">
-                                    Ultimo accesso oggi alle 12:00
+                                    {{ getLastOnline(getCurrentContact()) }}
                                 </p>
                             </div>
                             <div class="col-3 d-flex align-items-center justify-content-end">

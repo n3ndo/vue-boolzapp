@@ -231,6 +231,11 @@ createApp({
     searchContact() {
       this.contacts.forEach(contact => contact.visible = false);
       this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchText.toLowerCase())).forEach(contact => contact.visible = true);
+    },
+
+    getLastOnline(contact) {
+      const lastMessage = contact.messages.filter(message => message.status === 'received').pop();
+      return lastMessage ? "Ultimo accesso: " + lastMessage.date : '';
     }
   }
 }).mount('#app');
